@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { edu1, edu2, edu3, edu4, edu5, edu6, edu8, edu7 } from '@assets';
-
 const frames = [edu1, edu2, edu3, edu4, edu5, edu6, edu7, edu8];
 
 type EducationNpcProps = {

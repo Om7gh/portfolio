@@ -1,19 +1,19 @@
 import {
     finder,
-    gallary,
+    skill_icon,
     idle1,
     linkedIn,
     resume,
-    Skills,
     github,
+    education_icon
 } from '@/assets';
 import { usePorfolio } from '@/store/usePortfolio';
 import { Tooltip } from 'react-tooltip';
 const menu = [
     { id: 0, name: 'Projects', icon: finder },
     { id: 2, name: 'about me', icon: idle1 },
-    { id: 1, name: 'skills', icon: gallary },
-    { id: 3, name: 'education', icon: Skills },
+    { id: 1, name: 'skills', icon: skill_icon },
+    { id: 3, name: 'education', icon: education_icon },
     { id: 4, name: 'resume', icon: resume },
     {
         id: 5,

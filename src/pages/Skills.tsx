@@ -3,9 +3,11 @@ import {
     Git,
     Github,
     Javascript,
+    MySQL,
     Nextjs,
     Nodejs,
     React,
+    SQLite,
     Tailwindcss,
 } from '@/components/icons';
 import SkillsNpc from '@/components/npc/SkillsNpc';
@@ -38,6 +40,11 @@ export default function Skills() {
                     </div>
                     <div className="bg-slate-800/60 p-3 rounded-xl shadow-xl shadow-black/20">
                         <Github size={'55'} />
+                    </div>
+                     <div className="bg-slate-800/60 p-3 rounded-xl shadow-xl shadow-black/20">
+                        <MySQL size={'55'} />
+                    </div> <div className="bg-slate-800/60 p-3 rounded-xl shadow-xl shadow-black/20">
+                        <SQLite size={'55'} />
                     </div>
                 </div>
 

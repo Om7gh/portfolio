@@ -14,8 +14,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 function WindowFrame({
     winKey,
     title,
-    widthClassName = 'min-w-[min(720px,92vw)]',
-    heightClassName = 'min-h-[min(520px,70vh)]',
+    widthClassName = 'min-w-[min(1024px,92vw)]',
+    heightClassName = 'min-h-[min(720px,90vh)]',
     children,
 }: WindowFrameProps) {
     const { windows, closeWindow, focusWindow } = usePorfolio();
@@ -273,7 +273,7 @@ function WindowFrame({
                     animate="animate"
                     exit="exit"
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    className={`fixed rounded-2xl overflow-hidden bg-slate-950/60 backdrop-blur-xl shadow-xl shadow-black/30 ${widthClassName} ${heightClassName}`}
+                    className={`absolute rounded-2xl overflow-hidden bg-slate-950/60 backdrop-blur-xl shadow-xl shadow-black/30 ${widthClassName} ${heightClassName}`}
                     style={{
                         zIndex: win.zIndex,
                         left: pos.x,

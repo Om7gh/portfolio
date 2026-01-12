@@ -21,9 +21,9 @@ export default function Npc() {
     const velocity = useRef({ x: 0, y: 0 });
     const targetRef = useRef({ x: 0, y: 0 });
     const dragOffset = useRef({ x: 0, y: 0 });
-    const npcSize = { width: 64, height: 128 };
+    const npcSize = { width: 32, height: 64 };
 
-    const maxSpeed = 4;
+    const maxSpeed = 20;
     const acceleration = 0.15;
     const friction = 0.98;
 
@@ -195,7 +195,7 @@ export default function Npc() {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 alt="NPC"
-                className='object-cover'
+                className="object-cover"
                 style={{
                     position: 'fixed',
                     left: position.x,
