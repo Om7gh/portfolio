@@ -13,12 +13,12 @@ function Menu() {
                 <li className="cursor-pointer font-bold text-slate-50">
                     Omar ghazi
                 </li>
-                <li className="cursor-pointer text-slate-50">file</li>
-                <li className="cursor-pointer text-slate-50">edit</li>
-                <li className="cursor-pointer text-slate-50">view</li>
-                <li className="cursor-pointer text-slate-50">go</li>
-                <li className="cursor-pointer text-slate-50">window</li>
-                <li className="cursor-pointer text-slate-50">help</li>
+                <li className="cursor-pointer text-slate-50 hidden sm:block">file</li>
+                <li className="cursor-pointer text-slate-50 hidden sm:block">edit</li>
+                <li className="cursor-pointer text-slate-50 hidden md:block">view</li>
+                <li className="cursor-pointer text-slate-50 hidden md:block">go</li>
+                <li className="cursor-pointer text-slate-50 hidden lg:block">window</li>
+                <li className="cursor-pointer text-slate-50 hidden lg:block">help</li>
             </ul>
         </div>
     );

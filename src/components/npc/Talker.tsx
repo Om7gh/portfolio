@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
     talker1,
     talker2,
@@ -28,13 +28,14 @@ type TalkerProps = {
 
 function Talker({ alt = 'NPC', intervalMs = 600, className }: TalkerProps) {
     const [frame, setFrame] = useState(0);
+    const frameRef = useRef(0)
 
     useEffect(() => {
-        const id = window.setInterval(() => {
+        frameRef.current = window.setInterval(() => {
             setFrame((prev) => (prev + 1) % frames.length);
         }, intervalMs);
 
-        return () => window.clearInterval(id);
+        return () => window.clearInterval(frameRef.current);
     }, [intervalMs]);
     return (
         <div className={className}>

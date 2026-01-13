@@ -17,14 +17,18 @@ export default function Npc() {
     const [isPaused, setIsPaused] = useState(false);
     const [isDragging, setIsDragging] = useState(false);
     const [alert, setAlert] = useState('');
+    const frameRef = useRef(0)
+    const moveInterval = useRef(0)
+    const targetInterval = useRef(0)
+
 
     const velocity = useRef({ x: 0, y: 0 });
     const targetRef = useRef({ x: 0, y: 0 });
     const dragOffset = useRef({ x: 0, y: 0 });
     const npcSize = { width: 32, height: 64 };
 
-    const maxSpeed = 20;
-    const acceleration = 0.15;
+    const maxSpeed = 2;
+    const acceleration = 0.05;
     const friction = 0.98;
 
     const pickNewTarget = () => {
@@ -36,11 +40,11 @@ export default function Npc() {
 
     useEffect(() => {
         pickNewTarget();
-        const animationInterval = setInterval(() => {
+        frameRef.current = setInterval(() => {
             setFrame((prev) => (prev + 1) % frames.length);
         }, 100);
 
-        const moveInterval = setInterval(() => {
+        moveInterval.current = setInterval(() => {
             if (isPaused || isDragging) return;
             setPosition((prev) => {
                 const target = targetRef.current;
@@ -93,7 +97,7 @@ export default function Npc() {
             });
         }, 16);
 
-        const targetInterval = setInterval(
+        targetInterval.current = setInterval(
             () => {
                 pickNewTarget();
             },
@@ -101,9 +105,9 @@ export default function Npc() {
         );
 
         return () => {
-            clearInterval(animationInterval);
-            clearInterval(moveInterval);
-            clearInterval(targetInterval);
+            clearInterval(frameRef.current);
+            clearInterval(moveInterval.current);
+            clearInterval(targetInterval.current);
         };
     }, [isPaused, isDragging]);
 

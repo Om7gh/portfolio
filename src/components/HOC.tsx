@@ -10,6 +10,8 @@ import { usePorfolio } from '@/store/usePortfolio';
 import type { WindowFrameProps, WindowPosition, WindowSize } from '@/types';
 import { windowMotion, windowPositionCache, windowSizeCache } from '@/constant';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useIsMobile } from '@/hooks/useIsMobile';
+import { IoChevronBack } from 'react-icons/io5';
 
 function WindowFrame({
     winKey,
@@ -20,6 +22,7 @@ function WindowFrame({
 }: WindowFrameProps) {
     const { windows, closeWindow, focusWindow } = usePorfolio();
     const win = windows[winKey];
+    const isMobile = useIsMobile();
 
     const containerRef = useRef<HTMLDivElement | null>(null);
     const draggingRef = useRef<{
@@ -100,11 +103,9 @@ function WindowFrame({
         let right = next.right;
         let bottom = next.bottom;
 
-        // Enforce minimum size first, preserving the anchored edge.
         if (right - left < minWidth) {
             const width = right - left;
             const missing = minWidth - width;
-            // Prefer adjusting the left edge; callers set anchors by leaving an edge unchanged.
             left -= missing;
         }
 
@@ -262,6 +263,49 @@ function WindowFrame({
             };
         };
 
+    // Mobile iPhone-style window
+    if (isMobile) {
+        return (
+            <AnimatePresence>
+                {win.isOpen && (
+                    <motion.div
+                        key={`mobile-${winKey}`}
+                        variants={{
+                            initial: { x: '100%', opacity: 0 },
+                            animate: { x: 0, opacity: 1 },
+                            exit: { x: '100%', opacity: 0 },
+                        }}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        className="fixed h-full z-10000 top-10 left-0 right-0 bg-slate-950/95 backdrop-blur-xl z-50 flex flex-col"
+                    >
+                        <div className="h-14 px-4 flex items-center justify-between bg-slate-900/80 border-b border-slate-700/50 safe-area-top">
+                            <button
+                                type="button"
+                                className="flex items-center gap-1 text-blue-400 active:opacity-70"
+                                onClick={() => closeWindow(winKey)}
+                            >
+                                <IoChevronBack className="w-6 h-6" />
+                                <span className="text-base">Back</span>
+                            </button>
+                            <p className="text-slate-50 font-semibold capitalize text-lg">
+                                {title ?? win.name}
+                            </p>
+                            <div className="w-16" />
+                        </div>
+
+                        <div className="flex-1 overflow-auto p-4 pb-40">
+                            {children}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        );
+    }
+
+    // Desktop Mac OS-style window
     return (
         <AnimatePresence>
             {win.isOpen && (
