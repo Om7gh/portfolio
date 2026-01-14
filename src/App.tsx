@@ -7,9 +7,14 @@ import {
     SkillsWindow,
 } from './pages';
 import { useIsMobile } from './hooks/useIsMobile';
+import { useEffect } from 'react';
 
 function App() {
     const isMobile = useIsMobile();
+
+    useEffect(() => {
+        document.title = "omar ghazi -- Portfolio";
+    }, []);
     
     return (
         <div id="App" className={`flex justify-between flex-col ${isMobile ? 'iphone-frame' : ''}`}>
