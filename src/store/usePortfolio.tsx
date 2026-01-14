@@ -33,12 +33,20 @@ interface Store {
         subChildKey?: number,
     ) => void;
     getChild: (winKey: number, childKey: number, subChildKey?: number) => any;
+    isVisited: boolean;
+    setIsVisited: () => void;
 }
 
 const usePorfolio = create<Store>()(
     immer((set, get) => ({
         windows,
         nextZIndex: zIndex + 1,
+        isVisited: document.cookie.includes('visited=true'),
+        setIsVisited: () =>
+            set((state: any) => {
+                state.isVisited = true;
+                document.cookie = "visited=true; max-age=31536000";
+            }),
 
         openWindow: (winKey: number) =>
             set((state: any) => {

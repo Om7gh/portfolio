@@ -19,3 +19,4 @@ export const EducationWindow = withWindow(Education, {
     title: 'education',
 });
 export const ResumeWindow = withWindow(Resume, { winKey: 4, title: 'resume' });
+export { default as Loading } from './Loading';

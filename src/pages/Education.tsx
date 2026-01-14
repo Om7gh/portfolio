@@ -11,7 +11,7 @@ const educationItems: EducationItem[] = [
     {
         title: 'Computer Science',
         school: '1337 Coding School (UM6P)',
-        years: '2022 — Present',
+        years: '2023 — Present',
         highlights: 'Algorithms • C / C++ • Linux And More...',
     },
 ];
