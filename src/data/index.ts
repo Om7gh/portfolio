@@ -14,7 +14,7 @@ export const windows = [
                     {
                         name: 'demo',
                         type: 'video',
-                        videoPath: '/src/assets/videos/worldwise_app.mp4',
+                        videoPath: '/videos/worldwise_app.mp4',
                         zIndex: 1002,
                         isOpen: false,
                     },
@@ -60,7 +60,7 @@ Visit the app and start marking your adventures!`,
                     {
                         name: 'demo',
                         type: 'video',
-                        videoPath: '/src/assets/videos/pong_chess_app.webm',
+                        videoPath: '/videos/pong_chess_app.webm',
                         zIndex: 1002,
                         isOpen: false,
                     },
