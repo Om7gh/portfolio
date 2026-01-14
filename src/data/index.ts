@@ -36,7 +36,7 @@ A React application for tracking your travels around the world.
 
 ## Tech Stack
 - React
-- TypeScript
+- JavaScript (ES6+)
 - Leaflet for maps
 - Context API for state management
 - CSS Modules for styling
@@ -75,8 +75,8 @@ A full-stack multiplayer gaming platform featuring classic Pong and Chess games.
 
 ## Features
 - Real-time multiplayer gameplay
-- Pong: Classic arcade action
-- Chess: Strategic battles with full ruleset
+- Pong: Classic game
+- Chess: Strategic game with full ruleset
 - Live matchmaking
 - Player rankings and statistics
 - Responsive design for all devices
@@ -91,23 +91,18 @@ A full-stack multiplayer gaming platform featuring classic Pong and Chess games.
 ### Backend
 - Node.js with Fastify
 - WebSocket server
-- PostgreSQL for game data
+- sqlite for game database
 - JWT authentication
+- 2fa for enhanced security
+- oauth for social logins (google, discord)
+- game customization options and more
 
 ## Getting Started
 \`\`\`bash
-# Backend
-cd server
-npm install
-npm run dev
-
-# Frontend
-cd client
-npm install
-npm run dev
+# make all
 \`\`\`
 
-Challenge your friends and climb the leaderboard!`,
+see the full code in the repo and start playing!`,
                     },
                 ],
             },
