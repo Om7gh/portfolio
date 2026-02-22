@@ -1,75 +1,50 @@
-# React + TypeScript + Vite
+# 🚀 Om7gh's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 
-Currently, two official plugins are available:
+A modern, interactive portfolio website inspired by **macOS aesthetics**. Built with **React + TypeScript** and animated using **Framer Motion**, it features fully functional draggable and resizable windows, delightful animated characters (like a playful robot companion), and smooth transitions for an immersive user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Live Demo
+[👉 portfolio-nine-sooty-64.vercel.app](https://portfolio-nine-sooty-64.vercel.app)
 
-## React Compiler
+> **Pro Tip**: Drag windows around, resize them, minimize to the dock, and interact with the animated mascot for a true macOS feel!
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📱 Screenshots
+![Portfolio Screenshot](https://via.placeholder.com/1200x600/000000/FFFFFF?text=Portfolio+Screenshot) <!-- Replace with actual screenshot URL -->
 
-## Expanding the ESLint configuration
+![Gaming Platform Window](https://via.placeholder.com/800x500/000000/FFFFFF?text=Gaming+Platform+Demo) <!-- Add demo screenshots here -->
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Features
+- **macOS-Inspired UI**: Dock, menu bar, desktop icons, and window management mimicking macOS Sierra/High Sierra.
+- **Drag & Drop Windows**: Fully interactive windows that can be dragged, resized, minimized, maximized, and closed.
+- **Smooth Animations**: Powered by Framer Motion for fluid entrance/exit animations, hover effects, and character movements.
+- **Animated Characters**: Cute, interactive mascot that reacts to user actions (waves, dances, etc.).
+- **Responsive Design**: Optimized for desktop (best experience) with mobile fallbacks.
+- **Project Showcases**: Embedded demos and details for key projects.
+- **Performance Optimized**: Lazy loading, code splitting, and efficient rendering for buttery-smooth interactions.
 
-```js
-export default defineConfig([
-    globalIgnores(['dist']),
-    {
-        files: ['**/*.{ts,tsx}'],
-        extends: [
-            // Other configs...
+## 🛠 Tech Stack
+| Category          | Technologies                          |
+|-------------------|---------------------------------------|
+| **Frontend**      | React, TypeScript, Tailwind CSS       |
+| **Animations**    | Framer Motion                         |
+| **Window Mgmt**   | Custom hooks for drag/resize logic    |
+| **Deployment**    | Vercel                                |
+| **Other**         | Vite (build tool)                     |
 
-            // Remove tseslint.configs.recommended and replace with this
-            tseslint.configs.recommendedTypeChecked,
-            // Alternatively, use this for stricter rules
-            tseslint.configs.strictTypeChecked,
-            // Optionally, add this for stylistic rules
-            tseslint.configs.stylisticTypeChecked,
+## 🎮 Showcased Projects
+Currently featuring two standout full-stack projects:
 
-            // Other configs...
-        ],
-        languageOptions: {
-            parserOptions: {
-                project: ['./tsconfig.node.json', './tsconfig.app.json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-            // other options...
-        },
-    },
-]);
-```
+### 1. Gaming Platform (Pong + Chess)
+- **Live Demo**: Embedded in portfolio window.
+- **Description**: A real-time multiplayer platform for **Pong** and **Chess**. Supports online matchmaking, user authentication, leaderboards, and live gameplay.
+- **Tech**: React/Next.js (Frontend), Node.js/Fastify (Backend), WebSockets for real-time, SQLite/MySQL.
+- **Key Features**:
+  - Multiplayer Pong with physics engine and power-ups.
+  - Full Chess engine with AI opponent and online PvP.
+  - Responsive UI with animations.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+*(More projects coming soon – check my [GitHub](https://github.com/Om7gh) for the full portfolio!)*
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default defineConfig([
-    globalIgnores(['dist']),
-    {
-        files: ['**/*.{ts,tsx}'],
-        extends: [
-            // Other configs...
-            // Enable lint rules for React
-            reactX.configs['recommended-typescript'],
-            // Enable lint rules for React DOM
-            reactDom.configs.recommended,
-        ],
-        languageOptions: {
-            parserOptions: {
-                project: ['./tsconfig.node.json', './tsconfig.app.json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-            // other options...
-        },
-    },
-]);
-```
-
-# portfolio
