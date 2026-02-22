@@ -11,10 +11,6 @@ A modern, interactive portfolio website inspired by **macOS aesthetics**. Built 
 
 > **Pro Tip**: Drag windows around, resize them, minimize to the dock, and interact with the animated mascot for a true macOS feel!
 
-## 📱 Screenshots
-![Portfolio Screenshot](https://via.placeholder.com/1200x600/000000/FFFFFF?text=Portfolio+Screenshot) <!-- Replace with actual screenshot URL -->
-
-![Gaming Platform Window](https://via.placeholder.com/800x500/000000/FFFFFF?text=Gaming+Platform+Demo) <!-- Add demo screenshots here -->
 
 ## 🚀 Features
 - **macOS-Inspired UI**: Dock, menu bar, desktop icons, and window management mimicking macOS Sierra/High Sierra.
