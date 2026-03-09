@@ -22,7 +22,7 @@ export { default as idle3 } from './npc/idle3.png';
 export { default as Skills } from './skillsIcons.png';
 export { default as linkedIn } from './linkedInIcon.png';
 export { default as resume } from './resume.png';
-export { default as myResume } from './omghazi_intership_resume.pdf';
+export { default as myResume } from './resume.pdf';
 export { default as talker1 } from './npc/talk/talker1.png';
 export { default as talker2 } from './npc/talk/talker2.png';
 export { default as talker3 } from './npc/talk/talker3.png';
